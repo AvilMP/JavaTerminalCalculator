@@ -4,7 +4,7 @@ public class JTC {
         Display display = new Display();
         Mathops mathops = new Mathops();
         boolean programloop = true;
-
+            //1
         do{
             for(int i = 1; i < 20; i++){                                         
                 if(i == 3){
