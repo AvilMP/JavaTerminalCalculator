@@ -1,23 +1,27 @@
 
 public class Add {
+
+    private String name = new String("+. Dodaj.");
+    private char op;
     private float a;
     private float b;
 
-    public Add(float a, float b) {
-        this.a = a;
-        this.b = b;
+    public Add() {
+        this.op = '+';
+        this.a = 0;
+        this.b = 0;
     }
 
-    public float getA() {
-        return a;
+    public String getName(){
+        return this.name;
+    }
+
+    public char getop(){
+        return this.op;
     }
 
     public void setA(float a) {
         this.a = a;
-    }
-
-    public float getB() {
-        return b;
     }
 
     public void setB(float b) {

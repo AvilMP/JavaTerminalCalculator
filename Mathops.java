@@ -1,17 +1,28 @@
 
 public class Mathops {
     //user cout
-    float[] intigers = new float[20];
-    char[]  operand = new char[18];
-    double result;
+    private static byte wideTable = 30;
+    private float[] intigers = new float[wideTable];
+    private byte[]  operand = new byte[wideTable];
+    private double result;
+
+    public Mathops(){
+        for(int i = 0; i < wideTable; i++){
+            this.intigers[i] = 0;
+        }
+        for(int i = 0; i < wideTable; i++){
+            this.operand[i] = 0;
+        }
+        this.result = 0;
+    }
 
     //typical op
-    Add addition;
+    Add addition = new Add();
 
     public void add(){
         //
     }
 
-    Sub subtraction;
+    Sub subtraction = new Sub();
     //specjal op
 }
