@@ -28,7 +28,7 @@ public class Add {
         this.b = b;
     }
 
-    float calculate(){
+    public float calculate(){
         return this.a + this.b;
     }
 }

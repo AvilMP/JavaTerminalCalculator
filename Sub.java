@@ -28,7 +28,7 @@ public class Sub {
         this.b = b;
     }
 
-    float calculate(){
+    public float calculate(){
         return this.a - this.b;
     }
 }

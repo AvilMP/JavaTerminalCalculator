@@ -5,13 +5,11 @@ public class Mathops {
     private float[] intigers = new float[wideTable];
     private byte[]  operand = new byte[wideTable];
     private double result;
+    public int modules;
 
     public Mathops(){
         for(int i = 0; i < wideTable; i++){
-            this.intigers[i] = 0;
-        }
-        for(int i = 0; i < wideTable; i++){
-            this.operand[i] = 0;
+            this.intigers[i] = this.operand[i] = 0;
         }
         this.result = 0;
     }
