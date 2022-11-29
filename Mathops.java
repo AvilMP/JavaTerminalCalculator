@@ -1,17 +1,30 @@
 
 public class Mathops {
     //user cout
-    private static byte wideTable = 30;
+    public static byte wideTable = 30;
     private float[] intigers = new float[wideTable];
-    private byte[]  operand = new byte[wideTable];
+    private char[]  operand = new char[wideTable];
     private double result;
     public int modules;
 
     public Mathops(){
         for(int i = 0; i < wideTable; i++){
-            this.intigers[i] = this.operand[i] = 0;
+            this.intigers[i] = 0;
+            this.operand[i]  = '+';
         }
         this.result = 0;
+        this.modules = 2;
+    }
+
+    float getNumb(int tabNumb){
+        return intigers[tabNumb];
+    }
+
+    char getChar(int tabChar){
+        if(tabChar == wideTable - 1) {
+            return ' ';
+        }
+        return operand[tabChar];
     }
 
     //typical op
