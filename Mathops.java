@@ -1,11 +1,10 @@
 
 public class Mathops {
-    //user cout
-    public static byte wideTable = 30;
+    public static byte wideTable = 30;  //max user numbers input.
     private float[] intigers = new float[wideTable];
     private char[]  operand = new char[wideTable];
     private double result;
-    public int modules;
+    public byte modules;
 
     public Mathops(){
         for(int i = 0; i < wideTable; i++){
@@ -21,9 +20,6 @@ public class Mathops {
     }
 
     char getChar(int tabChar){
-        if(tabChar == wideTable - 1) {
-            return ' ';
-        }
         return operand[tabChar];
     }
 

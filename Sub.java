@@ -8,8 +8,8 @@ public class Sub {
 
     public Sub() {
         this.op = '-';
-        this.a = 0;
-        this.b = 0;
+        this.a  = 0;
+        this.b  = 0;
     }
 
     public String getName(){
