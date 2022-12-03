@@ -9,10 +9,10 @@ public class Mathops {
     public Mathops(){
         for(int i = 0; i < wideTable; i++){
             this.intigers[i] = 0;
-            this.operand[i]  = '+';
+            this.operand[i]  = 0;
         }
         this.result = 0;
-        this.modules = 2;
+        this.modules = (2) - 1; // (mod/mds).
     }
 
     float getNumb(int tabNumb){
