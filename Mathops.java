@@ -1,5 +1,6 @@
 
 public class Mathops {
+
     public static byte wideTable = 30;  //max user numbers input.
     private double[] intigers = new double[wideTable];
     private char[]  operand = new char[wideTable];
@@ -9,10 +10,6 @@ public class Mathops {
     public Mathops(){
         for(int i = 0; i < wideTable; i++){
             this.intigers[i] = 0;
-            //t*
-            //this.intigers[0] =1.3;
-            //this.intigers[1] =2.3;
-            //*t
             this.operand[i]  = 0;
         }
         this.result = 0;
@@ -28,17 +25,25 @@ public class Mathops {
             i++;
         }while(this.intigers[i] != 0);
             return i;
-    } 
+    }
 
-    double getNumb(int tabNumb){
+    public void setIntiger(int tab , double num){
+        this.intigers[tab] = num;
+    }
+
+    public void setOperand(int tab , char ch){
+        this.operand[tab] = ch;
+    }
+
+    public double getNumb(int tabNumb){
         return intigers[tabNumb];
     }
 
-    char getChar(int tabChar){
+    public char getChar(int tabChar){
         return operand[tabChar];
     }
 
-    double getResult(){
+    public double getResult(){
         return this.result;
     }
 

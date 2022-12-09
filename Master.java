@@ -3,12 +3,11 @@ import java.util.Scanner;
 public class Master {
 
     Mathops mathops = new Mathops();
-    Scanner sc = new Scanner(System.in);
 
     private String appName = new String("Jtc v0.4.0");
     private String stdMsg = new String("=. Wynik.\nc. Reset\ne. Wyjście\n>>>");
 
-    public String text(int index){
+    private String text(int index){
         switch(index){
             case 1: return this.appName;
             case 2: return this.stdMsg;
@@ -44,19 +43,31 @@ public class Master {
                         System.out.println();
                         System.out.println(text(i) + mathops.getResult());
                     break;  //print numb + op.
-                case 4: System.out.println(text(i));
-
-                //test*
-                System.out.println();
-                    System.out.println("SP = " + mathops.stackPointer());
-                //*test
+                case 4: inputMenager(mathops.stackPointer());
                     break;  //print input op.
+                    
             }
         }
     }
 
-    public void inputMenager(int select){ //select from stackPointer();
-        //...
+    public int inputMenager(int sp){ //select from stackPointer();
+        Scanner sc = new Scanner(System.in);
+
+        if(sp == 0){
+            System.out.println(text(4));
+            mathops.setIntiger(sp, sc.nextInt());
+            return 0;
+        }
+        else if(mathops.getChar(sp - 1) == 0){
+            System.out.println(text(5));
+            mathops.setOperand( (sp - 1), sc.next().charAt(0));
+            return 0;
+        }
+        else{
+            System.out.println(text(4));
+            mathops.setIntiger(sp, sc.nextInt());
+            return 0;
+        }
     }
 
     public void reset(){
@@ -65,6 +76,6 @@ public class Master {
 
     public boolean exit(){
         // ...
-        return false;
+        return true;
     }
 }
