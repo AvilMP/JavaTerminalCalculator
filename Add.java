@@ -1,34 +1,30 @@
 
-public class Add {
+public class Add{
 
     private String name = new String("+. Dodaj.");
     private char op;
-    private float a;
-    private float b;
+    private double a;
+    private double b;
 
-    public Add() {
-        this.op = '+';
-        this.a = 0;
-        this.b = 0;
+    Add() {
+        op = '+';
+        a = 0;
+        b = 0;
     }
 
-    public String getName(){
-        return this.name;
+    String getName(){
+        return name;
     }
 
-    public char getop(){
-        return this.op;
+    char getop(){
+        return op;
     }
 
-    public void setA(float a) {
-        this.a = a;
+    void set(double a, double b) {
+        this.a = a; this.b = b;
     }
 
-    public void setB(float b) {
-        this.b = b;
-    }
-
-    public float calculate(){
-        return this.a + this.b;
+    double calculate(){
+        return a + b;
     }
 }

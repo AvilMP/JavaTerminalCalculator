@@ -4,13 +4,13 @@ public class Master {
 
     Mathops mathops = new Mathops();
 
-    private String appName = new String("Jtc v0.4.0");
+    private String appName = new String("Jtc alpha v0.8.9");
     private String stdMsg = new String("=. Wynik.\nc. Reset\ne. Wyjście\n>>>");
 
     private String text(int index){
         switch(index){
-            case 1: return this.appName;
-            case 2: return this.stdMsg;
+            case 1: return appName;
+            case 2: return stdMsg;
             case 3: return "<<<\nWynik: ";
             case 4: return "Wprowadz wartość: ";
             case 5: return "Wybierz operacje: ";
@@ -20,7 +20,7 @@ public class Master {
         }
     }
 
-    public void outputMenager(){
+    void ioMenager(){
         for(int i = 1; i <= 4; i++){
             switch(i){
                 case 1: System.out.println(text(i));
@@ -44,37 +44,35 @@ public class Master {
                         System.out.println(text(i) + mathops.getResult());
                     break;  //print numb + op.
                 case 4: inputMenager(mathops.stackPointer());
+                    mathops.calculate();
                     break;  //print input op.
                     
             }
         }
     }
 
-    public int inputMenager(int sp){ //select from stackPointer();
+    void inputMenager(int sp){ //select from stackPointer();
         Scanner sc = new Scanner(System.in);
 
         if(sp == 0){
             System.out.println(text(4));
             mathops.setIntiger(sp, sc.nextInt());
-            return 0;
         }
         else if(mathops.getChar(sp - 1) == 0){
             System.out.println(text(5));
             mathops.setOperand( (sp - 1), sc.next().charAt(0));
-            return 0;
         }
         else{
             System.out.println(text(4));
             mathops.setIntiger(sp, sc.nextInt());
-            return 0;
         }
     }
 
-    public void reset(){
+    void reset(){
         //...
     }
 
-    public boolean exit(){
+    boolean exit(){
         // ...
         return true;
     }
