@@ -4,34 +4,37 @@ public class Master {
 
     Mathops mathops = new Mathops();
 
-    private String appName = new String("Jtc alpha v0.8.9");
-    private String stdMsg = new String("=. Wynik.\nc. Reset\ne. Wyjście\n>>>");
+    private String appName = new String("Jtc beta v0.9.0\nMenu:  ");
+    private String stdMsg = new String("=. Wynik |\nc. Reset\ne. Wyjście\n>>>");
 
     private String text(int index){
         switch(index){
-            case 1: return appName;
-            case 2: return stdMsg;
-            case 3: return "<<<\nWynik: ";
-            case 4: return "Wprowadz wartość: ";
-            case 5: return "Wybierz operacje: ";
-            case 7: return mathops.addition.getName();
-            case 8: return mathops.subtraction.getName();
+            case 1:  return appName;
+            case 2:  return stdMsg;
+            case 3:  return ">>>\nWynik: ";
+            case 4:  return "Wprowadz wartość: ";
+            case 5:  return "Wybierz operacje: ";
+            case 7:  return mathops.addition.getName();
+            case 8:  return mathops.subtraction.getName();
+            case 9:  return mathops.multiplication.getName();
+            case 10: return mathops.divison.getName();
             default: return " ";
         }
     }
 
     void ioMenager(){
         for(int i = 1; i <= 4; i++){
-            switch(i){
-                case 1: System.out.println(text(i));
-                    break;  //print title.
+            switch(i){  
+                case 1: //print title.
+                    System.out.println(text(i));
+                    break;
                 case 2:
-                        for(int j = 7; j <= 7 + mathops.modules; j++){
-                            System.out.println(text(j));
+                        for(int j = 7; j <= 7 + mathops.getModules(); j++){
+                            System.out.print(text(j));
                         }
                         System.out.println(text(i));
                     break;  //print options.
-                case 3: for(int f = 0; f < mathops.wideTable; f++){
+                case 3: for(int f = 0; f < mathops.getTabWide(); f++){
                             if(mathops.getNumb(f) == 0){
                                 break;
                             }

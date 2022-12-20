@@ -1,4 +1,4 @@
-// Java Terminal Calculator. alpha v0.8.9 /// 01.12.2022 - Scazza.
+// Java Terminal Calculator. beta v0.9.0 /// 01.12.2022 - Scazza.
 
 public class JTC {                                                          
     public static void main(String[] args) {

@@ -1,10 +1,9 @@
-public class Add extends Options{
-
-    private String name = new String("+. Dodaj | ");
+public class Div extends Options{
+    private String name = new String("/. Podziel | ");
     private char op;
 
-    Add() {
-        op = '+';
+    Div() {
+        op = '/';
         setA(0);
         setB(0);
     }
@@ -22,6 +21,9 @@ public class Add extends Options{
     }
 
     double calculate(){
-        return getA() + getB();
+        if(getB() == 0){ return getA();}
+        else return getA() / getB();
     }
+
+    
 }

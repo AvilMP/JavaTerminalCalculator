@@ -1,15 +1,11 @@
-
-public class Sub {
-
-    private String name = new String("-. Odejmij.");
+public class Sub extends Options {
+    private String name = new String("-. Odejmij | ");
     private char op;
-    private double a;
-    private double b;
 
     Sub() {
         op = '-';
-        a  = 0;
-        b  = 0;
+        setA(0);
+        setB(0);
     }
 
     String getName(){
@@ -21,10 +17,10 @@ public class Sub {
     }
 
     void set(double a, double b) {
-        this.a = a; this.b = b;
+        setA(a); setB(b);
     }
 
     double calculate(){
-        return a - b;
+        return getA() - getB();
     }
 }

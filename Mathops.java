@@ -1,11 +1,10 @@
+class Mathops {
 
-public class Mathops {
-
-    public static byte wideTable = 30;  //max user numbers input.
+    private byte wideTable = 30;  //max user numbers input.
     private double[] intigers = new double[wideTable];
     private char[]  operand = new char[wideTable];
     private double result;
-    public byte modules;    //(mod<<)  add,sub...etc...
+    private byte modules;    //(mod<<)  add,sub...etc...
 
     Mathops(){
         for(int i = 0; i < wideTable; i++){
@@ -13,12 +12,12 @@ public class Mathops {
             operand[i]  = 0;
         }
         result = 0;
-        modules = (2) - 1; // (mod/mds).
+        modules = (4) - 1; // (mod/mds).
     }
 
-    int stackPointer(){
+    int stackPointer(){ //dipslay number if != 0
         int i = -1;
-        if(intigers[wideTable -1] != 0){
+        if(intigers[wideTable - 1] != 0){
             return 0;
         }
         do{
@@ -47,13 +46,25 @@ public class Mathops {
         return result;
     }
 
+    byte getModules(){
+        return modules;
+    }
+
+    byte getTabWide(){
+        return wideTable;
+    }
+
     //cl*
     void calculate(){ //v2...
         result = intigers[0];
         for(int i = 0; i < (wideTable - 1); i++){
             switch(operand[i]){
-                case '+': addition.set(result , intigers[i + 1]); result = addition.calculate(); break;
-                case '-': subtraction.set(result, intigers[i + 1]); result = subtraction.calculate(); break; //...
+                case '+': addition.set(result , intigers[i + 1])        ; result = addition.calculate()         ; break;
+                case '-': subtraction.set(result, intigers[i + 1])      ; result = subtraction.calculate()      ; break;
+                case '*': multiplication.set(result, intigers[i + 1])   ; result = multiplication.calculate()   ; break;
+                case '/': divison.set(result, intigers[i + 1])          ; result = divison.calculate()          ; break;
+                case '^': break;
+                //...
                 default : break;
             }
         }
@@ -61,7 +72,9 @@ public class Mathops {
     //*cl
 
     //modules*
-    Add addition = new Add(); // mod++
-    Sub subtraction = new Sub(); //mod++
+    Add addition            = new Add(); //mod++
+    Sub subtraction         = new Sub(); //mod++
+    Mul multiplication      = new Mul(); //mod++
+    Div divison             = new Div(); //mod++
     //*modules
 }
