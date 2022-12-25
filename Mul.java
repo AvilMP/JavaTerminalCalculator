@@ -1,4 +1,4 @@
-public class Mul extends Options {
+public class Mul extends Reg {
     private String name = new String("*. Pomnóż | ");
     private char op;
 

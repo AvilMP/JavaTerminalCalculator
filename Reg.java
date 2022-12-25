@@ -1,8 +1,8 @@
-class Options {
+class Reg {
     private static double a;
     private static double b;
 
-    Options(){
+    Reg(){
         a = 0;
         b = 0;
     }

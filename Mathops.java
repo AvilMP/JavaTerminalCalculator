@@ -6,13 +6,25 @@ class Mathops {
     private double result;
     private byte modules;    //(mod<<)  add,sub...etc...
 
+    //modules*
+    Add addition            = new Add(); //mod++
+    Sub subtraction         = new Sub(); //mod++
+    Mul multiplication      = new Mul(); //mod++
+    Div divison             = new Div(); //mod++
+    Exp exponentiation      = new Exp(); //mod++
+    //*modules
+
     Mathops(){
+        reset();
+        modules = (5) - 1; // (mod/mds).
+    }
+
+    void reset(){
         for(int i = 0; i < wideTable; i++){
             intigers[i] = 0;
             operand[i]  = 0;
         }
         result = 0;
-        modules = (4) - 1; // (mod/mds).
     }
 
     int stackPointer(){ //dipslay number if != 0
@@ -58,23 +70,16 @@ class Mathops {
     void calculate(){ //v2...
         result = intigers[0];
         for(int i = 0; i < (wideTable - 1); i++){
+                addition.set(result , intigers[i + 1]); 
             switch(operand[i]){
-                case '+': addition.set(result , intigers[i + 1])        ; result = addition.calculate()         ; break;
-                case '-': subtraction.set(result, intigers[i + 1])      ; result = subtraction.calculate()      ; break;
-                case '*': multiplication.set(result, intigers[i + 1])   ; result = multiplication.calculate()   ; break;
-                case '/': divison.set(result, intigers[i + 1])          ; result = divison.calculate()          ; break;
-                case '^': break;
-                //...
+                case '+': result = addition.calculate()         ; break;
+                case '-': result = subtraction.calculate()      ; break;
+                case '*': result = multiplication.calculate()   ; break;
+                case '/': result = divison.calculate()          ; break;
+                case '^': result = exponentiation.calculate()   ; break;
                 default : break;
             }
         }
     }
     //*cl
-
-    //modules*
-    Add addition            = new Add(); //mod++
-    Sub subtraction         = new Sub(); //mod++
-    Mul multiplication      = new Mul(); //mod++
-    Div divison             = new Div(); //mod++
-    //*modules
 }

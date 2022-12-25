@@ -1,4 +1,4 @@
-public class Add extends Options{
+public class Add extends Reg {
 
     private String name = new String("+. Dodaj | ");
     private char op;

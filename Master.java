@@ -3,8 +3,10 @@ import java.util.Scanner;
 public class Master {
 
     Mathops mathops = new Mathops();
+    Scanner sc = new Scanner(System.in);
 
-    private String appName = new String("Jtc beta v0.9.0\nMenu:  ");
+    private static boolean programOn = true;
+    private String appName = new String("Jtc beta v0.9.8\nMenu:  ");
     private String stdMsg = new String(" c. Reset | e. Wyjście\n>>>");
 
     private String text(int index){
@@ -18,6 +20,7 @@ public class Master {
             case 8:  return mathops.subtraction.getName();
             case 9:  return mathops.multiplication.getName();
             case 10: return mathops.divison.getName();
+            case 11: return mathops.exponentiation.getName();
             default: return " ";
         }
     }
@@ -55,7 +58,6 @@ public class Master {
     }
 
     void inputMenager(int sp){ //select from stackPointer();
-        Scanner sc = new Scanner(System.in);
 
         if(sp == 0){
             System.out.println(text(4));
@@ -64,6 +66,8 @@ public class Master {
         else if(mathops.getChar(sp - 1) == 0){
             System.out.println(text(5));
             mathops.setOperand( (sp - 1), sc.next().charAt(0));
+            if(mathops.getChar(sp - 1) == 'c') mathops.reset();
+            else if(mathops.getChar(sp - 1 ) == 'e') programOn = false;
         }
         else{
             System.out.println(text(4));
@@ -71,12 +75,27 @@ public class Master {
         }
     }
 
+    void cl(){ //v1
+        for(int i = 0; i < 4; i++){
+            System.out.println();
+        }
+        try{
+            final String os = System.getProperty("os.name");
+            if (os.contains("Windows")){
+                Runtime.getRuntime().exec("cls");
+            }
+            else{
+                Runtime.getRuntime().exec("clear");
+            }
+        }
+        catch (final Exception e){}
+    }
+
     void reset(){
-        //...
+        mathops.reset();
     }
 
     boolean exit(){
-        // ...
-        return true;
+        return programOn;
     }
 }

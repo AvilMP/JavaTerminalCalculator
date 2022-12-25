@@ -1,9 +1,11 @@
-public class Div extends Reg {
-    private String name = new String("/. Podziel | ");
+import java.lang.Math;
+public class Exp extends Reg {
+
+    private String name = new String("^. Potęguj | ");
     private char op;
 
-    Div() {
-        op = '/';
+    Exp() {
+        op = '^';
     }
 
     String getName(){
@@ -16,8 +18,6 @@ public class Div extends Reg {
 
     double calculate(){
         if(getB() == 0){ return getA();}
-        else return getA() / getB();
+        else return Math.pow(getA(), getB());
     }
-
-    
 }
