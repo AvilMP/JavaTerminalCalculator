@@ -1,13 +1,14 @@
 class Options {
-    private double a;
-    private double b;
+    private static double a;
+    private static double b;
 
-    void setA(double a){
-        this.a = a;
+    Options(){
+        a = 0;
+        b = 0;
     }
 
-    void setB(double b){
-        this.b = b;
+    void set(double aa, double bb) {
+        a = aa; b = bb;
     }
 
     double getA(){

@@ -22,16 +22,16 @@ class Mathops {
         }
         do{
             i++;
-        }while(this.intigers[i] != 0);
+        }while(intigers[i] != 0);
             return i;
     }
 
     void setIntiger(int tab , double num){
-        this.intigers[tab] = num;
+        intigers[tab] = num;
     }
 
     void setOperand(int tab , char ch){
-        this.operand[tab] = ch;
+        operand[tab] = ch;
     }
 
     double getNumb(int tabNumb){

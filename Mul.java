@@ -4,8 +4,6 @@ public class Mul extends Options {
 
     Mul() {
         op = '*';
-        setA(0);
-        setB(0);
     }
 
     String getName(){
@@ -14,10 +12,6 @@ public class Mul extends Options {
 
     char getop(){
         return op;
-    }
-
-    void set(double a, double b) {
-        setA(a); setB(b);
     }
 
     double calculate(){

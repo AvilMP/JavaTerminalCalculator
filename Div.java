@@ -4,8 +4,6 @@ public class Div extends Options{
 
     Div() {
         op = '/';
-        setA(0);
-        setB(0);
     }
 
     String getName(){
@@ -14,10 +12,6 @@ public class Div extends Options{
 
     char getop(){
         return op;
-    }
-
-    void set(double a, double b) {
-        setA(a); setB(b);
     }
 
     double calculate(){

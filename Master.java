@@ -5,7 +5,7 @@ public class Master {
     Mathops mathops = new Mathops();
 
     private String appName = new String("Jtc beta v0.9.0\nMenu:  ");
-    private String stdMsg = new String("=. Wynik |\nc. Reset\ne. Wyjście\n>>>");
+    private String stdMsg = new String(" c. Reset | e. Wyjście\n>>>");
 
     private String text(int index){
         switch(index){
@@ -26,13 +26,13 @@ public class Master {
         for(int i = 1; i <= 4; i++){
             switch(i){  
                 case 1: //print title.
-                    System.out.println(text(i));
+                        System.out.println(text(i));
                     break;
                 case 2:
                         for(int j = 7; j <= 7 + mathops.getModules(); j++){
                             System.out.print(text(j));
                         }
-                        System.out.println(text(i));
+                            System.out.println(text(i));
                     break;  //print options.
                 case 3: for(int f = 0; f < mathops.getTabWide(); f++){
                             if(mathops.getNumb(f) == 0){
@@ -41,13 +41,13 @@ public class Master {
                             else{
                                 System.out.print(mathops.getNumb(f)); System.out.print(' ');
                             }
-                            System.out.print(mathops.getChar(f)); System.out.print(' '); 
+                                System.out.print(mathops.getChar(f)); System.out.print(' '); 
                         }
-                        System.out.println();
-                        System.out.println(text(i) + mathops.getResult());
+                            System.out.println();
+                            System.out.println(text(i) + mathops.getResult());
                     break;  //print numb + op.
                 case 4: inputMenager(mathops.stackPointer());
-                    mathops.calculate();
+                        mathops.calculate();
                     break;  //print input op.
                     
             }
