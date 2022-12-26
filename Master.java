@@ -61,7 +61,7 @@ public class Master {
 
         if(sp == 0){
             System.out.println(text(4));
-            mathops.setIntiger(sp, sc.nextInt());
+            mathops.setIntiger(sp, sc.nextDouble());
         }
         else if(mathops.getChar(sp - 1) == 0){
             System.out.println(text(5));
@@ -71,14 +71,11 @@ public class Master {
         }
         else{
             System.out.println(text(4));
-            mathops.setIntiger(sp, sc.nextInt());
+            mathops.setIntiger(sp, sc.nextDouble());
         }
     }
 
     void cl(){ //v1
-        for(int i = 0; i < 4; i++){
-            System.out.println();
-        }
         try{
             final String os = System.getProperty("os.name");
             if (os.contains("Windows")){
@@ -88,7 +85,9 @@ public class Master {
                 Runtime.getRuntime().exec("clear");
             }
         }
-        catch (final Exception e){}
+        catch (final Exception e){for(int i = 0; i < 4; i++){
+            System.out.println();
+        }}
     }
 
     void reset(){

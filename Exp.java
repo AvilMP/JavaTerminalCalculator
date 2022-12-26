@@ -18,6 +18,9 @@ public class Exp extends Reg {
 
     double calculate(){
         if(getB() == 0){ return getA();}
-        else return Math.pow(getA(), getB());
+        else{
+            //...
+            return Math.pow(getA(), getB());
+        }
     }
 }
